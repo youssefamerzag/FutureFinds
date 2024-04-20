@@ -1,0 +1,154 @@
+header {
+    margin-top: -30px;
+    height: 400px;
+    background-image: url("../imgs/banner/homeBanner.png");
+    background-size: cover;
+}
+
+.bannerContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 75px;
+}
+
+.bannerContent p {
+    margin: -0px;
+}
+
+.bannerBtn {
+    margin-top: 20px;
+    padding: 10px 25px 10px 25px;
+    background-color: #0077b6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.title {
+    font-size: 50px;
+    margin: 20px 0px 20px 40px;
+}
+
+.categories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.category {
+    width: 199px;
+    height: 250px;
+    background-color: #0077b6;
+    margin: 0px 30px 0px 30px;
+    text-align: center;
+    background-size: cover;
+    border-radius: 10px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+
+.product {
+    width: 199px;
+    height: 280px;
+    margin: 0px 30px 0px 30px;
+    background-size: cover;
+    border-radius: 5px;
+    text-decoration: none;
+    color: black;
+}
+
+.productImg {
+    width: 100%;
+    height: 200px;
+    background-color: lightblue;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.productsSlider {
+    width: 100%;
+    margin: 10px 0px 10px 0px;
+}
+
+.slider {
+    display: flex;
+    justify-content: center; /* Center the products horizontally */
+    align-items: flex-start; /* Align products to the top */
+    margin: 10px 0px 10px 0px;
+}
+
+.slider .product {
+    width: 200px;
+    height: 280px;
+    margin: 20px 20px; /* Adjust margin to add space between products */
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+
+}
+
+
+.promotions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.promotion1 {
+    width: 45%;
+    background-color: #0077b6;
+    height: 300px;
+    border-radius: 20px;
+    background-size: cover;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.promotion1 .content {
+    margin-top: 170px;
+    margin-left: 30px;
+}
+
+.promotion1 button {
+    padding: 10px 30px 10px 30px;
+    border: none;
+    background-color: black;
+    color: white;
+    border-radius: 20px;
+}
+
+.promotion1 p {
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.promotion2 {
+    width: 45%;
+    background-color: #0077b6;
+    height: 300px;
+    border-radius: 20px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    background-size: cover;
+}
+
+.promotion2 .content {
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+.promotion2 p {
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.promotion2 button {
+    padding: 10px 30px 10px 30px;
+    border: none;
+    background-color: black;
+    color: white;
+    border-radius: 20px;
+}
+
+
+/* footer */
+

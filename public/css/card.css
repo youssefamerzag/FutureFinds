@@ -1,0 +1,57 @@
+.content {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.card {
+    width: 50%;
+    border-radius: 5px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.products {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.product {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px;
+    background-color: aqua;
+    padding: 10px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.titles {
+    display: flex;
+    justify-content: space-around;
+}
+
+.product p {
+    margin: 5px;
+}
+
+.product img {
+    width: 100px;
+    height: 100px;
+    background-color: aliceblue;
+}
+
+.Summary {
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    margin: 0px;
+}
+
+.SummaryTitle {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.test {
+    width: 30%;
+}

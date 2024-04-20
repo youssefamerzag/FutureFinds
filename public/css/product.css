@@ -1,0 +1,130 @@
+/* General Styles */
+body {
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.product-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.product {
+    display: flex;
+    align-items: center;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.img {
+    width: 50%;
+    height: 500px;
+    padding: 20px;
+    background-color: #0077b6;
+}
+
+.img img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
+.content {
+    width: 50%;
+    padding: 20px;
+    margin-left: 30px;
+}
+
+.product-title {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #333;
+    margin-top: -100px;
+}
+
+.product-description {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.product-price {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.quantity {
+    margin-bottom: 20px;
+}
+
+.quantity label {
+    font-size: 18px;
+    color: #333;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.quantity input {
+    width: 100px;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.btns {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.btns button {
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.buy-now-btn {
+    background-color: #0077b6;
+    color: #fff;
+}
+
+.add-to-cart-btn {
+    background-color: #333;
+    color: #fff;
+}
+
+.btns button:hover {
+    opacity: 0.9;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .product {
+        flex-direction: column;
+    }
+
+    .img {
+        width: 100%;
+    }
+
+    .content {
+        width: 100%;
+    }
+
+    .btns {
+        justify-content: space-between;
+    }
+
+    .btns button {
+        width: 48%;
+    }
+}

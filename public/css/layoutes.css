@@ -1,0 +1,102 @@
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.footer h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.footer-categories ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-categories ul li {
+    margin-bottom: 8px;
+}
+
+.footer-categories ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-categories ul li a:hover {
+    color: lightblue;
+}
+
+.footer-contact form {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-contact textarea,
+.footer-contact input {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.footer-contact textarea {
+    width: 300px;
+    height: 100px;
+}
+
+.footer-contact input[type="email"] {
+    width: 100%;
+}
+
+.footer-contact button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0077b6;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.footer-contact button:hover {
+    background-color: lightblue;
+    color: black;
+    transition: 0.2s;
+}
+
+
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(calc(-250px * 7));
+    }
+}
+
+.slider2 {
+    height: 100px;
+    overflow: hidden;
+    position: relative;
+    margin: auto;
+    margin-top: 30px;
+    background-color: black;
+}
+
+.slider2 .slide2-track {
+    animation: scroll 40s linear infinite;
+    display: flex;
+    width: calc(250px * 14);
+}
+
+.slider2 .slide2 {
+    height: 100px;
+    width: 250px;
+}
