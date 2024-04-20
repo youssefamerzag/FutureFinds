@@ -9,6 +9,7 @@ use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\UserController;
 use App\Http\Middleware\checkAge;
 use App\Http\Middleware\CheckProfile;
+use App\Models\CardItem;
 use App\Models\Categories;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -22,7 +23,6 @@ Route::get('/', [ProductsController::class , 'index'])->name('producthome.index'
 
 
 //categories
-
 Route::get('/category/{category}' , [CategoriesController::class , 'index'])->name('categories.index');
 Route::get('/lowerToHigher/{category}', [CategoriesController::class, 'sortBy'])->name('product.sortby');
 Route::get('/higherToLower/{category}', [CategoriesController::class, 'sortByDesc'])->name('product.sortByDesc');
@@ -35,3 +35,4 @@ Route::get('/card', [CardController::class , 'index'])->name('card.index');
 //card
 Route::post('/card/{product}' , [CardController::class, 'add'])->name('card.add');
 Route::get('/card', [CardController::class, 'index'])->name('card.items');
+Route::delete('/card/{product}/delete', [CardController::class, 'destroy'])->name('card.destroy');

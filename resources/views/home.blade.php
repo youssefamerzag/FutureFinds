@@ -36,45 +36,6 @@
         </div>
     </header>
     <body>
-        <p class="title"><span style="color: #0077b6">C</span>ATEGORIES</p>
-        <div class="categories">
-            @foreach($categories as $category)
-                <a href={{ route('categories.index', $category->id )}} class="category" style='background-image: url("../imgs/categories/{{$category->name}}.png")'>
-                </a>
-            @endforeach
-        </div>
-
-        <p class="title" style="margin-top: 50px"><span style="color: #0077b6">B</span>EST SELLING</p>
-        <div class="productsSlider">
-            <div class="slider">
-                @foreach($products as $product)
-                    <a href="{{ route('products.show' , $product->id)}}" class="product">
-                        <div class="productImg" style='background-image: url("../imgs/products/{{$product->title}}.png")'>
-                        </div>
-                        <div style="margin-top: 15px; margin-left : 20px">
-                            <p style="margin-bottom: 4px ; font-size: 18px">{{ $product->title }}</p>
-                            <p>$ {{ $product->price }}</p>
-                        </div>
-                    </a>
-                @endforeach
-            </div>
-        </div>
-
-        <p class="title" style="margin-top: 50px"><span style="color: #0077b6">N</span>EW ARRIVED</p>
-        <div class="productsSlider">
-            <div class="slider">
-                @foreach($products as $product)
-                    <a href="{{ route( 'products.show', $product->id ) }}" class="product">
-                        <div class="productImg" style='background-image: url("../imgs/products/{{$product->title}}.png")'>
-                        </div>
-                        <div style="margin-top: 15px; margin-left : 20px">
-                            <p style="margin-bottom: 4px ; font-size: 18px">{{ $product->title }}</p>
-                            <p>$ {{ $product->price }}</p>
-                        </div>
-                    </a>
-                @endforeach
-            </div>
-        </div>
 
         <div class="promotions">
             <div class="promotion1" style="background-image: url('../imgs/promotions/promotion 1.jpg')">
@@ -89,6 +50,44 @@
                     <button>Shop Now</button>
                 </div>
             </div>
+        </div>
+
+        <p class="title" style="margin-top: 50px"><span style="color: #0077b6">B</span>EST SELLING</p>
+        <div class="products">
+            @foreach ($bestSellingProducts as $bestSellingProduct)
+                <a href="{{ route('products.show' , $bestSellingProduct->id )}}" class="product">
+                    <div>
+                        <img>
+                    </div>
+                    <div class="content">
+                        <p>{{ $bestSellingProduct->title }}</p>
+                        <p>MAD {{ $bestSellingProduct->price }}</p>
+                    </div>
+                </a>
+            @endforeach
+        </div>
+        
+        <p class="title"><span style="color: #0077b6">C</span>ATEGORIES</p>
+        <div class="categories">
+            @foreach($categories as $category)
+                <a href={{ route('categories.index', $category->id )}} class="category" style='background-image: url("../imgs/categories/{{$category->name}}.png")'>
+                </a>
+            @endforeach
+        </div>
+
+        <p class="title" style="margin-top: 50px"><span style="color: #0077b6">N</span>EW ARRIVED</p>
+        <div class="products">
+            @foreach ($products as $product)
+                <a href="{{ route('products.show' , $product->id )}}" class="product">
+                    <div>
+                        <img>
+                    </div>
+                    <div class="content">
+                        <p>{{ $product->title }}</p>
+                        <p>MAD {{ $product->price }}</p>
+                    </div>
+                </a>
+            @endforeach
         </div>
 
         {{-- <div>
@@ -117,16 +116,19 @@
         </div> --}}
     </body>
 
-    <script>
-        $(document).ready(function(){
-            $(".slider").slick({
-                infinite: true,
-                slidesToShow: 4,
-                slidesToScroll: 4
-            });
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var titles = document.querySelectorAll('.product .content p:first-child');
+        titles.forEach(function(title) {
+            var text = title.textContent || title.innerText;
+            var words = text.split(' ');
+            if (words.length > 4) {
+                var truncatedText = words.slice(0, 4).join(' ') + '...';
+                title.textContent = truncatedText;
+            }
         });
-        </script>
-
+    });
+</script>
 </body>
 </html>
 

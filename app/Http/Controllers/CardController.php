@@ -15,8 +15,9 @@ class CardController extends Controller
         $cardItems = CardItem::where('card_id', $user->id)->get();
         $productIds = $cardItems->pluck('product_id')->toArray();
         $products = Product::whereIn('id', $productIds)->get();
-        
         $cardProducts = [];
+        $totalPrice = 0;
+
         foreach ($cardItems as $cardItem) {
             $product = $products->where('id', $cardItem->product_id)->first();
             if ($product) {
@@ -24,11 +25,15 @@ class CardController extends Controller
                     'card_item' => $cardItem,
                     'product' => $product,
                 ];
+                $totalPrice += $product->price * $cardItem->quantity;
             }
         }
 
+        //total
+
         return view('card.index' , [
-            'cardProducts' => $cardProducts
+            'cardProducts' => $cardProducts,
+            'totalPrice' => $totalPrice
         ]);
     }
 
@@ -44,7 +49,14 @@ class CardController extends Controller
 
         $cardItem->save();
         
-        return to_route('producthome.index');
+        return to_route('card.items');
+    }
+
+    public function destroy($id) {
+
+        $cardItem = CardItem::find($id);
+        $cardItem->delete();
+        return to_route('card.items');
     }
 
 }

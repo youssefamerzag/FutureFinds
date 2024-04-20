@@ -23,26 +23,40 @@
 <div class="content">
     <div class="card">
         <div class="products">
-        <div class="titles">
-            <span>Image</span>
-            <span>Title</span>
-            <span>Price</span>
-            <span>Quantity</span>
-        </div>
             @foreach ($cardProducts as $cardProduct)
             <div class="product">
                 <img>
                 <p>{{ $cardProduct['product']->title }}</p>
                 <p>{{ $cardProduct['product']->price }}</p>
                 <p>{{ $cardProduct['card_item']->quantity }}</p>
+                <form action="{{ route('card.destroy' , $cardProduct['card_item']->id ) }}" method="post">
+                    @csrf
+                    @method('delete')
+                    <input type="submit" value="Remove" class="removeBn">
+                </form>
             </div>
             @endforeach
         </div>
     </div>
-    <div class="test">
-        <div class="Summary">
+    <div class="Summary">
+        <div class="SummaryItems">
             <h1 class="SummaryTitle">Summary</h1>
-            <h3>1224dh</h3>
+            <div class="">
+                    @foreach($cardProducts as $cardProduct)
+                    <div style="display: flex; justify-content: space-between">
+                        <p>{{ $cardProduct['product']->price }}</p> 
+                        <p>x {{ $cardProduct['card_item']->quantity }}</p>
+                    </div>
+                    @endforeach
+            </div>
+            <div>
+                Shipping : 0
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 30px">
+                <p>Total :</p>
+                <p>{{ $totalPrice }}</p>
+            </div>
+                <button class="checkoutBtn">Go to checkout</button>
         </div>
     </div>
 </div>

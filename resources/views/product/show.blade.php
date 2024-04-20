@@ -34,8 +34,10 @@
                     <input type="number" id="quantity" name="quantity" value="1" min="1">
                 </div>
                 <div class="btns">
-                    <input type="submit" value="add to card" class="buy-now-btn">
-                    <button class="add-to-cart-btn">Add to Cart</button>
+                    <button type="submit" value="add to card" class="buy-now-btn">Buy Now</button>
+                </div>
+                <div class="btns">
+                    <button type="submit" value="add to card" class="add-to-cart-btn">Add to Cart</button>
                 </div>
             </form>
         </div>

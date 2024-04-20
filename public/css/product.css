@@ -87,19 +87,22 @@ body {
     padding: 12px 20px;
     font-size: 16px;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
     margin-right: 10px;
+    margin: 10px 0px;
 }
 
 .buy-now-btn {
     background-color: #0077b6;
     color: #fff;
+    width: 100%;
 }
 
 .add-to-cart-btn {
     background-color: #333;
     color: #fff;
+    width: 100%;
 }
 
 .btns button:hover {

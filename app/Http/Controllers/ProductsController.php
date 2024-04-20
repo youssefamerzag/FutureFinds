@@ -9,9 +9,11 @@ use Illuminate\Http\Request;
 class ProductsController extends Controller
 {
     public function index() {
+        $bestSelling = Product::all()->take(5);
         return view('home' , [
             'products' => Product::all(),
-            'categories' => Categories::all()
+            'categories' => Categories::all(),
+            'bestSellingProducts' => $bestSelling,
         ]);
     }
 

@@ -42,5 +42,18 @@
         @endforeach
     </div>
 </body>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var titles = document.querySelectorAll('.product .content p:first-child');
+        titles.forEach(function(title) {
+            var text = title.textContent || title.innerText;
+            var words = text.split(' ');
+            if (words.length > 4) {
+                var truncatedText = words.slice(0, 4).join(' ') + '...';
+                title.textContent = truncatedText;
+            }
+        });
+    });
+</script>
 </html>
 @endsection
