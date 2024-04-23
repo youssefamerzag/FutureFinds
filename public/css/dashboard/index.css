@@ -1,0 +1,8 @@
+.statistics {
+    display: flex;
+    justify-content: center;
+}
+
+.statistics p {
+    margin: 10px;
+}

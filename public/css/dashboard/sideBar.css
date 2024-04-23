@@ -1,0 +1,42 @@
+/* Dashboard Container */
+.dashboard-container {
+    display: flex;
+    height: 100vh; /* Make the container full height of viewport */
+}
+
+/* Dashboard Sidebar */
+.dashboard-sidebar {
+    background-color: #2E6CA1;
+    color: #FFF;
+    width: 250px; /* Adjust as needed */
+    padding: 20px;
+    position: fixed; /* Make the sidebar fixed */
+    top: 0; /* Align sidebar to the top */
+    bottom: 0; /* Extend sidebar to the bottom */
+}
+
+/* Dashboard Navigation */
+.dashboard-nav {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Dashboard Link */
+.dashboard-link {
+    color: #FFF;
+    text-decoration: none;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.dashboard-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Dashboard Content */
+.dashboard-content {
+    flex-grow: 1;
+    padding: 20px;
+    margin-left: 250px; /* Adjust to match sidebar width */
+}

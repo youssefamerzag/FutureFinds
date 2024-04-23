@@ -1,0 +1,35 @@
+
+
+.table-container {
+    display: flex;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table {
+    background-color: #e9edc9;
+}
+
+.table-container table {
+    width: 100%;
+    margin: 20px;
+    text-align: center;
+}
+
+.table-container th, .table-container td {
+    padding: 8px;
+}
+
+.table-container tbody tr {
+    border-bottom: 1px solid #ccc; /* Add a bottom border to each table row */
+}
+
+.table-container tbody tr:last-child {
+    border-bottom: none; /* Remove bottom border from the last table row */
+}
+
+.table-container thead {
+    background-color: #2E6CA1;
+    color: white;
+}
+

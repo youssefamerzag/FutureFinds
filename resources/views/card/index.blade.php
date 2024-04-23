@@ -25,7 +25,7 @@
         <div class="products">
             @foreach ($cardProducts as $cardProduct)
             <div class="product">
-                <img>
+                <img src="imgs/{{ $cardProduct['product']->image }}">
                 <p>{{ $cardProduct['product']->title }}</p>
                 <p>{{ $cardProduct['product']->price }}</p>
                 <p>{{ $cardProduct['card_item']->quantity }}</p>

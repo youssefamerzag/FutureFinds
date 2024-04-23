@@ -57,7 +57,7 @@
             @foreach ($bestSellingProducts as $bestSellingProduct)
                 <a href="{{ route('products.show' , $bestSellingProduct->id )}}" class="product">
                     <div>
-                        <img>
+                        <img src="imgs/{{ $bestSellingProduct->image }}">
                     </div>
                     <div class="content">
                         <p>{{ $bestSellingProduct->title }}</p>
@@ -80,7 +80,7 @@
             @foreach ($products as $product)
                 <a href="{{ route('products.show' , $product->id )}}" class="product">
                     <div>
-                        <img>
+                        <img src="imgs/{{ $product->image }}">
                     </div>
                     <div class="content">
                         <p>{{ $product->title }}</p>

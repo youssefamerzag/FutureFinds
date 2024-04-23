@@ -3,6 +3,9 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\Categories;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -12,8 +15,27 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        \App\models\Country::factory(100)->create();
-        \App\models\User::factory(100)->create();
-        \App\models\Employee::factory(10)->create();
+        User::create([
+            'name' => 'admin',
+            'email' => 'admin@gmail.com',
+            'password' => 'admin@gmail.com',
+            'role' => 'admin'
+        ]);
+
+        Categories::create([
+            'name' => 'Phones'
+        ]);
+
+        Categories::create([
+            'name' => 'Tablets'
+        ]);
+
+        Categories::create([
+            'name' => 'Laptops'
+        ]);
+
+        Categories::create([
+            'name' => 'Consoles'
+        ]);
     }
 }

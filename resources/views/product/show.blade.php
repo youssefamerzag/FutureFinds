@@ -21,7 +21,7 @@
     <div class="product-container">
         <div class="product">
             <div class="img">
-                <img src="{{ asset('images/product-image.jpg') }}" alt="Product Image">
+                <img src="{{ asset('imgs/' . $product->image) }}" alt="{{ $product->title }}">
             </div>
             <form class="content" action="{{ route('card.add', $product->id)}}" method="POST">
                 @csrf
