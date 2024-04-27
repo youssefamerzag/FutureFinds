@@ -35,8 +35,10 @@ Route::get('/card', [CardController::class , 'index'])->name('card.index');
 
 //card
 Route::post('/card/{product}' , [CardController::class, 'add'])->name('card.add');
+Route::post('/card/{product}/buy', [CardController::class , 'buyNow'])->name('card.buy');
 Route::get('/card', [CardController::class, 'index'])->name('card.items');
 Route::delete('/card/{product}/delete', [CardController::class, 'destroy'])->name('card.destroy');
+
 
 //dashboard
 Route::prefix('/dashboard')->group(function () {

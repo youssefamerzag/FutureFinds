@@ -19,8 +19,26 @@
 </head>
 <div>
     <div class="statistics">
-        <p>clients : {{ $clients }}</p>
-        <p>Products : {{ $Products }}</p>
+        <div class="statistic" style="background-color: #4ece3a">
+            <p class="statistic_title">PROFITS</p>
+            <p class="statistic_value">600 MAD</p>
+        </div>
+        <div class="statistic" style="background-color: #3ab795">
+            <p class="statistic_title">Orders</p>
+            <p class="statistic_value">4</p>
+        </div>
+        <div class="statistic" style="background-color: #8ecae6">
+            <p class="statistic_title">Clients</p>
+            <p class="statistic_value">{{ $clients }}</p>
+        </div>
+        <div class="statistic" style="background-color: #7f7f7f">
+            <p class="statistic_title">Products</p>
+            <p class="statistic_value">{{ $Products }}</p>
+        </div>
+        <div class="statistic" style="background-color: #525174">
+            <p class="statistic_title">Products In Card</p>
+            <p class="statistic_value">{{ $productsInCard}}</p>
+        </div>
     </div>
 
     <div>

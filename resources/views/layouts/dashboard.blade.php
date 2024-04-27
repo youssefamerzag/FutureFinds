@@ -21,9 +21,8 @@
     <div class="dashboard-container">
         <aside class="dashboard-sidebar">
             <nav class="dashboard-nav">
-                <a href="#" class="dashboard-link">Dashboard</a>
+                <img src="{{ asset('imgs/logo/Logo.png')}}" width="200px" style="margin-bottom: 20px">
                 <a href="{{ route('dashboard.index') }}" class="dashboard-link">Analytics</a>
-                <a href="#" class="dashboard-link">Settings</a>
                 <a href="{{ route('dashboard.users')}}" class="dashboard-link">Users</a>
             </nav>
         </aside>

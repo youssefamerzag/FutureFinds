@@ -37,19 +37,32 @@ class CardController extends Controller
         ]);
     }
 
-    public function add(Request $request) {
-        $productId = $request->input('productId');
+    public function add(Request $request, $id) {
+        
 
         $cardItem = new CardItem();
         $user = Auth::user();
-
-        $cardItem->product_id = $productId;
+        
+        $cardItem->product_id = $id;
         $cardItem->quantity = $request->input('quantity');
         $cardItem->card_id = $user->id;
 
         $cardItem->save();
         
-        return to_route('card.items');
+        return redirect('product/'.$id);
+    }
+
+    public function buyNow(Request $request, $id) {
+        $cardItem = new CardItem();
+        $user = Auth::user();
+
+        $cardItem->product_id = $id;
+        $cardItem->quantity = $request->input('quantity');
+        $cardItem->card_id = $user->id;
+
+        $cardItem->save();
+        
+        return redirect('card');
     }
 
     public function destroy($id) {

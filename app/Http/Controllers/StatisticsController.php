@@ -14,9 +14,18 @@ class StatisticsController extends Controller
         
         $clients = User::where('role' , 'user')->get()->count();
 
+        $productsInCard = CardItem::all();
+        $totalProductsInCard= 0;
+
+
+        foreach($productsInCard as $productInCard) {
+            $totalProductsInCard = $totalProductsInCard + $productInCard->quantity;
+        }
+
         return view('admin.dashboard.index',[
             'clients' => $clients,
             'Products' => Product::all()->count(),
+            'productsInCard' => $totalProductsInCard
         ]);
     }
 }

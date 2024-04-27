@@ -21,7 +21,7 @@
 </head>
 <body>
 <div class="content">
-    <div class="card">
+    <div class="card" style="background-color: white">
         <div class="products">
             @foreach ($cardProducts as $cardProduct)
             <div class="product">

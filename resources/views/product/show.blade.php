@@ -21,10 +21,9 @@
     <div class="product-container">
         <div class="product">
             <div class="img">
-                <img src="{{ asset('imgs/' . $product->image) }}" alt="{{ $product->title }}">
+                <img src="{{ asset('imgs/' .$product->image) }}" alt="{{ $product->title }}">
             </div>
-            <form class="content" action="{{ route('card.add', $product->id)}}" method="POST">
-                @csrf
+            <div class="content" >
                 <input value="{{ $product->id }}" hidden name="productId">
                 <h1 class="product-title">{{ $product->title }}</h1>
                 <p class="product-description">{{ $product->description }}</p>
@@ -33,15 +32,32 @@
                     <label for="quantity">Quantity:</label>
                     <input type="number" id="quantity" name="quantity" value="1" min="1">
                 </div>
-                <div class="btns">
+                <form class="btns" action="{{ route('card.buy', $product->id)}}" method="POST">
+                    @csrf
                     <button type="submit" value="add to card" class="buy-now-btn">Buy Now</button>
-                </div>
-                <div class="btns">
+                </form>
+                <form class="btns" action="{{ route('card.add', $product->id)}}" method="POST">
+                    @csrf
                     <button type="submit" value="add to card" class="add-to-cart-btn">Add to Cart</button>
-                </div>
-            </form>
+                </form>
+            </div>
         </div>
     </div>
 </body>
 </html>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('.buy-now-btn, .add-to-cart-btn').click(function() {
+            // Get the quantity value
+            var quantity = $('#quantity').val();
+
+            // Add the quantity value to the form data
+            $(this).closest('form').append('<input type="hidden" name="quantity" value="' + quantity + '">');
+        });
+    });
+</script>
+
+
 @endsection

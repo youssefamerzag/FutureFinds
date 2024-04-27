@@ -3,6 +3,20 @@
     justify-content: center;
 }
 
-.statistics p {
-    margin: 10px;
+.statistic {
+    margin: 5px;
+    padding: 20px;
+    width: 190px;
+    height: 100px;
+    color: white;
+}
+
+.statistic_title {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.statistic_value {
+    font-size: 20px;
 }
