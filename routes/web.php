@@ -5,6 +5,7 @@ use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\CityController;
 use App\Http\Controllers\CountryController;
 use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\StatisticsController;
 use App\Http\Controllers\UserController;
@@ -39,6 +40,9 @@ Route::post('/card/{product}/buy', [CardController::class , 'buyNow'])->name('ca
 Route::get('/card', [CardController::class, 'index'])->name('card.items');
 Route::delete('/card/{product}/delete', [CardController::class, 'destroy'])->name('card.destroy');
 
+//order 
+Route::get('/card/{card}/pay' , [OrderController::class , 'checkout'])->name('order.create');
+
 
 //dashboard
 Route::prefix('/dashboard')->group(function () {
@@ -48,8 +52,13 @@ Route::prefix('/dashboard')->group(function () {
             Route::put('/product/{product}/edit' , [ProductsController::class , 'update'])->name('dashboard.updateProduct');
             Route::delete('/product/{product}/delete', [ProductsController::class , 'destroy'])->name('dashboard.deleteProduct');
             Route::get('/' , [StatisticsController::class ,'index'])->name('dashboard.index');
+
+            //products
+            Route::get('/products' , [ProductsController::class , 'DashoardIndex'])->name('dashboard.products');
             Route::get('/product/create', [ProductsController::class, 'create'])->name('dashboard.createProduct');
             Route::post('/product/create' , [ProductsController::class , 'store'])->name('dashboard.storeProduct');
+            Route::get('/product/{product}/edit' , [ProductsController::class, 'edit'])->name('dashboard.productsEdit');
+            Route::put('/product/{product}/edit' , [ProductsController::class, 'update'])->name('dashboard.productsUpdate');
 
             //users
             Route::get('/users' , [UserController::class , 'users'])->name('dashboard.users');

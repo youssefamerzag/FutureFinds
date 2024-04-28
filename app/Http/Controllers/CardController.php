@@ -31,7 +31,9 @@ class CardController extends Controller
 
         //total
 
+
         return view('card.index' , [
+            'card' => Card::find($user->id),
             'cardProducts' => $cardProducts,
             'totalPrice' => $totalPrice
         ]);

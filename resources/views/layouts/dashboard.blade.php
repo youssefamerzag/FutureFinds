@@ -23,7 +23,8 @@
             <nav class="dashboard-nav">
                 <img src="{{ asset('imgs/logo/Logo.png')}}" width="200px" style="margin-bottom: 20px">
                 <a href="{{ route('dashboard.index') }}" class="dashboard-link">Analytics</a>
-                <a href="{{ route('dashboard.users')}}" class="dashboard-link">Users</a>
+                <a href="{{ route('dashboard.products')}}" class="dashboard-link">Products</a>
+                <a href="{{ route('dashboard.users')}}" class="dashboard-link">Clients</a>
             </nav>
         </aside>
         <main class="dashboard-content">

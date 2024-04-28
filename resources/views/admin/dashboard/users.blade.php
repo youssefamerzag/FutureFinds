@@ -8,7 +8,8 @@
     }
 
     table {
-    background-color: #e9edc9;
+    background-color: #f6fff8;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
     }
 
     /* Dashboard Table */
@@ -37,7 +38,7 @@
     }
 </style>
 
-<p style="font-size: 27px ; margin-left: 20px">Users :</p>
+<p style="font-size: 30px; font-weight: 800">Users</p>
 <div class="table-container">
     <table class="dashboard-table">
         <thead>

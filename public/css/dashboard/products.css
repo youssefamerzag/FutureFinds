@@ -1,34 +1,28 @@
-
-.statistics {
+.header {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
 }
 
-.statistic {
-    margin: 5px;
-    padding: 20px;
-    width: 190px;
-    height: 100px;
+.header p {
+    font-size: 30px;
+    font-weight: 800
+}
+
+.header button {
+    width: 150px;
+    height: 40px;
+    border: none;
+    background-color: #2E6CA1;
     color: white;
-    text-decoration: none;
+    border-radius: 3px;
 }
 
-.statistic_title {
-    font-size: 15px;
-    font-weight: 700;
-    margin-bottom: 5px;
-}
-
-.statistic_value {
-    font-size: 20px;
-}
-
-.orders {
+.products {
     display: flex;
     flex-direction: column-reverse;
 }
 
-.order {
+.product {
     display: flex;
     align-items: center;
     margin: 10px;
@@ -38,19 +32,18 @@
     background-color: #f6fff8;
 }
 
-.order img {
+.product img {
     width: 80px;
     height: 80px;
     margin-right: 20px;
     background-color: darkkhaki;
 }
 
-.order p {
+.product p {
     width: 150px;
     margin-bottom: 0px;
 }
 
-.orderTitle {
+.productTitle {
     width: 300px;
 }
-

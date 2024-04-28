@@ -56,7 +56,7 @@
                 <p>Total :</p>
                 <p>{{ $totalPrice }}</p>
             </div>
-                <button class="checkoutBtn">Go to checkout</button>
+                <a href="{{ route('order.create', $card->id)}}"><button class="checkoutBtn">Go to checkout</button></a>
         </div>
     </div>
 </div>

@@ -1,0 +1,38 @@
+.order-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.order-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.order-table th,
+.order-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.order-table th {
+    background-color: #f2f2f2;
+    text-align: left;
+}
+
+.total-price {
+    margin-top: 20px;
+}
+
+.pay-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.pay-button:hover {
+    background-color: #0056b3;
+}

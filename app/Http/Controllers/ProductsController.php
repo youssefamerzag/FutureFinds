@@ -38,8 +38,10 @@ class ProductsController extends Controller
         ]);
     }
 
+
+    //Dashboad 
     public function create() {
-        return view('product.create');
+        return view('admin.dashboard.product.create');
     }
 
     public function store(Request $request) {
@@ -68,7 +70,7 @@ class ProductsController extends Controller
     }   
 
     public function edit($id) {
-        return view('product.update', [
+        return view('admin.dashboard.product.edit', [
             'product' => Product::find($id)
         ]);
     }
@@ -77,7 +79,6 @@ class ProductsController extends Controller
         $request->validate([
             'title' => 'required',
             'description' => 'required',
-            'image' => 'required',
             'price' => 'required',
             'category' => 'required'
         ]);
@@ -109,5 +110,11 @@ class ProductsController extends Controller
         $product = Product::find($id);
         $product->delete();
         return to_route('dashboard.index');
+    }
+
+    public function DashoardIndex() {
+        return view('admin.dashboard.product.index', [
+            'products' => Product::all(),
+        ]);
     }
 }

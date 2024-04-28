@@ -27,10 +27,10 @@
             <p class="statistic_title">Orders</p>
             <p class="statistic_value">4</p>
         </div>
-        <div class="statistic" style="background-color: #8ecae6">
+        <a href="{{ route('dashboard.users')}}" class="statistic" style="background-color: #8ecae6">
             <p class="statistic_title">Clients</p>
             <p class="statistic_value">{{ $clients }}</p>
-        </div>
+        </a>
         <div class="statistic" style="background-color: #7f7f7f">
             <p class="statistic_title">Products</p>
             <p class="statistic_value">{{ $Products }}</p>
@@ -41,8 +41,50 @@
         </div>
     </div>
 
-    <div>
-        Orders :
+    <p style="margin: 10px ; font-size: 25px; margin-top: 30px">Last Orders:</p>
+    <div class="orders">
+        <div class="order">
+            <img>
+            <p class="orderTitle">iPhone 14</p>
+            <div>
+                <p>2</p>
+                <p style="color: gray">Quantity</p>
+            </div>
+            <div>
+                <p>8000 MAD</p>
+                <p style="color: gray">Sold amount</p>
+            </div>
+            <div>
+                <p>#1229</p>
+                <p style="color: gray">Order id</p>
+            </div>
+            <div>
+                <p>youssef amerzag</p>
+                <p style="color: gray">Client</p>
+            </div>
+            <p class="detailsLink">Details</p>
+        </div>
+        <div class="order">
+            <img>
+            <p class="orderTitle">iPhone 14</p>
+            <div>
+                <p>2</p>
+                <p style="color: gray">Quantity</p>
+            </div>
+            <div>
+                <p>8000 MAD</p>
+                <p style="color: gray">Sold amount</p>
+            </div>
+            <div>
+                <p>#1229</p>
+                <p style="color: gray">Order id</p>
+            </div>
+            <div>
+                <p>youssef amerzag</p>
+                <p style="color: gray">Client</p>
+            </div>
+            <p class="detailsLink">Details</p>
+        </div>
     </div>
 
 </div>
