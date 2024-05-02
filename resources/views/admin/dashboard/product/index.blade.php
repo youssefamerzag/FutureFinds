@@ -47,7 +47,7 @@
                         <p style="color: gray">Created By</p>
                     </div>
                     <p class="detailsLink">Details</p>
-                    <a class="detailsLink" href="{{ route('dashboard.productsEdit', $product->id)}}" >Details</a>
+                    <a class="detailsLink" href="{{ route('dashboard.productsEdit', $product->id)}}" >Edit</a>
                 </div>
             @endforeach
         </div>

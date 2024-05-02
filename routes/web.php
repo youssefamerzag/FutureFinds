@@ -3,6 +3,7 @@
 use App\Http\Controllers\CardController;
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\CityController;
+use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\CountryController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\OrderController;
@@ -43,6 +44,8 @@ Route::delete('/card/{product}/delete', [CardController::class, 'destroy'])->nam
 //order 
 Route::get('/card/{card}/pay' , [OrderController::class , 'checkout'])->name('order.create');
 
+//contact
+Route::post('/contact/send' , [ContactUsController::class , 'send'])->name('contact.send');
 
 //dashboard
 Route::prefix('/dashboard')->group(function () {

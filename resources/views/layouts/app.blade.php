@@ -99,17 +99,17 @@
             <div class="footer-categories">
                 <h3>Categories</h3>
                 <ul>
-                        <li><a href='/category/1'>Phones</a></li>
-                        <li><a href='/category/2'>Tablets</a></li>
-                        <li><a href='/category/3'>Laptops</a></li>
-                        <li><a href='/category/4'>Consoles</a></li>
+                    @foreach($categories as $category)
+                        <li><a href='/category/{{ $category->id }}'>{{ $category->name }}</a></li>
+                    @endforeach
                 </ul>
             </div>
             <div class="footer-contact">
                 <h3>Contact Us</h3>
-                <form>
-                    <textarea placeholder="Your message"></textarea>
-                    <input type="email" placeholder="Your Email">
+                <form action="{{ route('contact.send')}}" method="post">
+                    @csrf
+                    <textarea placeholder="Your message" name="message"></textarea>
+                    <input type="email" placeholder="Your Email" name="email">
                     <button type="submit">Send</button>
                 </form>
             </div>

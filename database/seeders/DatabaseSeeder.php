@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\Card;
 use App\Models\Categories;
 use App\Models\User;
 use Illuminate\Database\Seeder;
@@ -20,6 +21,10 @@ class DatabaseSeeder extends Seeder
             'email' => 'admin@gmail.com',
             'password' => 'admin@gmail.com',
             'role' => 'admin'
+        ]);
+
+        Card::create([
+            'user_id' => 1
         ]);
 
         Categories::create([

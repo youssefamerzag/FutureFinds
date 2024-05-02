@@ -11,12 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        schema::create('orders' , function(Blueprint $table) {
+        schema::create('contact_us' , function(Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->json('products');
-            $table->string('status')->default('open');
+            $table->string('email');
+            $table->longText('message');
             $table->timestamps();
         });
     }

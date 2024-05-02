@@ -20,71 +20,79 @@
 <div>
     <div class="statistics">
         <div class="statistic" style="background-color: #4ece3a">
-            <p class="statistic_title">PROFITS</p>
-            <p class="statistic_value">600 MAD</p>
+            <div>
+                <p class="statistic_title">PROFITS</p>
+                <p class="statistic_value">600.00</p>
+            </div>
+            <div>
+                <img width="50" height="50" src="https://img.icons8.com/dotty/80/FFFFFF/money.png" alt="money"/>
+            </div>
         </div>
         <div class="statistic" style="background-color: #3ab795">
-            <p class="statistic_title">Orders</p>
-            <p class="statistic_value">4</p>
+            <div>
+                <p class="statistic_title">Orders</p>
+                <p class="statistic_value">{{ $ordersTotal }}</p>
+            </div>
+            <div>
+                <img width="50" height="50" src="https://img.icons8.com/external-kmg-design-glyph-kmg-design/64/FFFFFF/external-logistics-shipping-delivery-kmg-design-glyph-kmg-design-2.png" alt="external-logistics-shipping-delivery-kmg-design-glyph-kmg-design-2"/>
+            </div>
         </div>
         <a href="{{ route('dashboard.users')}}" class="statistic" style="background-color: #8ecae6">
-            <p class="statistic_title">Clients</p>
-            <p class="statistic_value">{{ $clients }}</p>
+            <div>
+                <p class="statistic_title">Clients</p>
+                <p class="statistic_value">{{ $clients }}</p>
+            </div>
+            <div>
+                <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/FFFFFF/conference-foreground-selected.png" alt="conference-foreground-selected"/>
+            </div>
         </a>
         <div class="statistic" style="background-color: #7f7f7f">
-            <p class="statistic_title">Products</p>
-            <p class="statistic_value">{{ $Products }}</p>
+            <div>
+                <p class="statistic_title">Products</p>
+                <p class="statistic_value">{{ $Products }}</p>
+            </div>
+            <div>
+                <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/FFFFFF/fast-moving-consumer-goods.png" alt="fast-moving-consumer-goods"/>
+            </div>
         </div>
         <div class="statistic" style="background-color: #525174">
-            <p class="statistic_title">Products In Card</p>
-            <p class="statistic_value">{{ $productsInCard}}</p>
+            <div>
+                <p class="statistic_title">In Card</p>
+                <p class="statistic_value">{{ $productsInCard}}</p>
+            </div>
+            <div>
+                <img width="50" height="50" src="https://img.icons8.com/ios-glyphs/60/FFFFFF/shopping-cart--v1.png" alt="shopping-cart--v1"/>
+            </div>
         </div>
     </div>
 
-    <p style="margin: 10px ; font-size: 25px; margin-top: 30px">Last Orders:</p>
+    <p style="margin: 10px ; font-size: 25px; margin-top: 30px">Last Ordered Products</p>
     <div class="orders">
-        <div class="order">
-            <img>
-            <p class="orderTitle">iPhone 14</p>
-            <div>
-                <p>2</p>
-                <p style="color: gray">Quantity</p>
-            </div>
-            <div>
-                <p>8000 MAD</p>
-                <p style="color: gray">Sold amount</p>
-            </div>
-            <div>
-                <p>#1229</p>
-                <p style="color: gray">Order id</p>
-            </div>
-            <div>
-                <p>youssef amerzag</p>
-                <p style="color: gray">Client</p>
-            </div>
-            <p class="detailsLink">Details</p>
-        </div>
-        <div class="order">
-            <img>
-            <p class="orderTitle">iPhone 14</p>
-            <div>
-                <p>2</p>
-                <p style="color: gray">Quantity</p>
-            </div>
-            <div>
-                <p>8000 MAD</p>
-                <p style="color: gray">Sold amount</p>
-            </div>
-            <div>
-                <p>#1229</p>
-                <p style="color: gray">Order id</p>
-            </div>
-            <div>
-                <p>youssef amerzag</p>
-                <p style="color: gray">Client</p>
-            </div>
-            <p class="detailsLink">Details</p>
-        </div>
+        @foreach ($orders as $order)
+            @foreach($order['products'] as $product)
+                <div class="order">
+                    <img src="{{ asset('imgs/' . $product['image'] )}}">
+                    <p class="orderTitle">{{ $product['title']}}</p>
+                    <div>
+                        <p>{{ $product['quantity']}}</p>
+                        <p style="color: gray">Quantity</p>
+                    </div>
+                    <div>
+                        <p>{{ $product['price']}} MAD</p>
+                        <p style="color: gray">Sold amount</p>
+                    </div>
+                    <div>
+                        <p>#{{ $order['order_id'] }}</p>
+                        <p style="color: gray">Order id</p>
+                    </div>
+                    <div>
+                        <p>{{ $order['user']->name }}</p>
+                        <p style="color: gray">Client</p>
+                    </div>
+                    <p class="detailsLink">Details</p>
+                </div>
+            @endforeach
+        @endforeach
     </div>
 
 </div>

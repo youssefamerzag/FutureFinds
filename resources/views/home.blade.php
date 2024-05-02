@@ -89,31 +89,6 @@
                 </a>
             @endforeach
         </div>
-
-        {{-- <div>
-            <section class='slider2'>
-                <div class="slide2-track">
-                    <div class="slide2">
-                        <img src='../imgs/companies/hp.png' width="100px"/>
-                    </div>
-                    <div class="slide2">
-                        <img src='../imgs/companies/apple.png' width="100px"/>
-                    </div>
-                    <div class="slide2">
-                        <img src='../imgs/companies/samsung.png' width="100px"/>
-                    </div>
-                    <div class="slide2">
-                        <img src='../imgs/companies/nintendo.png' width="100px"/>
-                    </div>
-                    <div class="slide2">
-                        <img src='../imgs/companies/lenovo.png' width="100px"/>
-                    </div>
-                    <div class="slide2">
-                        <img src='../imgs/companies/sony.png' width="100px"/>
-                    </div>
-                </div>
-            </section>
-        </div> --}}
     </body>
 
 <script>
