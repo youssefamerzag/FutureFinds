@@ -67,6 +67,9 @@ Route::prefix('/dashboard')->group(function () {
             Route::get('/users' , [UserController::class , 'users'])->name('dashboard.users');
             Route::get('/user/{user}/details' , [UserController::class , 'show'])->name('dashboard.usersDetails');
             Route::delete('/user/{user}/delete', [UserController::class , 'destroy'])->name('dashboard.userDestroy');
+
+            //orders
+            Route::get('/orders' , [OrderController::class , 'index'])->name('dashboard.orders');
         });
     });
 });
