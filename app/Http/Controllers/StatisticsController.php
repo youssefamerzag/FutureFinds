@@ -25,16 +25,22 @@ class StatisticsController extends Controller
 
         $orders = Order::all();
         $orderItems = [];
+        $totalPrice = 0 ;
         foreach($orders as $order){
-            $product = json_decode($order->products, true);
+            $products = json_decode($order->products, true);
             $user = User::find($order->user_id);
-            if($product) {
+            $orderTotalPrice = 0;
+            if($products) {
                 $orderItems [] =[
                     'order_id' => $order->id,
-                    'products' => $product,
+                    'products' => $products,
                     'user' => $user,
                 ];
             }
+            foreach($products as $product) {
+                $orderTotalPrice += $product['price'] * $product['quantity'];  
+            }
+            $totalPrice += $orderTotalPrice;
         }
 
         //dd($orderItems);
@@ -44,7 +50,8 @@ class StatisticsController extends Controller
             'Products' => Product::all()->count(),
             'productsInCard' => $totalProductsInCard,
             'ordersTotal' => $orders->count(),
-            'orders' => $orderItems
+            'orders' => $orderItems,
+            'totalPrice' => $totalPrice
         ]);
     }
 }

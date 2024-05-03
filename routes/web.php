@@ -47,6 +47,7 @@ Route::get('/card/{card}/pay' , [OrderController::class , 'checkout'])->name('or
 //contact
 Route::post('/contact/send' , [ContactUsController::class , 'send'])->name('contact.send');
 
+
 //dashboard
 Route::prefix('/dashboard')->group(function () {
     Route::middleware('auth')->group(function () {

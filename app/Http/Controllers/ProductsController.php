@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Categories;
 use App\Models\Product;
+use App\Models\Promotion;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Ui\Presets\React;
@@ -12,10 +13,14 @@ class ProductsController extends Controller
 {
     public function index() {
         $bestSelling = Product::all()->take(5);
+        $promotion1 = Promotion::all()->first();
+        $promotion2 = Promotion::all()->skip(1)->first();
         return view('home' , [
             'products' => Product::all(),
             'categories' => Categories::all(),
             'bestSellingProducts' => $bestSelling,
+            'promotion1' => $promotion1,
+            'promotion2' => $promotion2
         ]);
     }
 
@@ -117,4 +122,5 @@ class ProductsController extends Controller
             'products' => Product::all(),
         ]);
     }
+    
 }

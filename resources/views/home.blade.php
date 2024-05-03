@@ -38,15 +38,15 @@
     <body>
 
         <div class="promotions">
-            <div class="promotion1" style="background-image: url('../imgs/promotions/promotion 1.jpg')">
+            <div class="promotion1" style="background-image: url('{{ asset($promotion1->image) }}');">
                 <div class="content">
-                    <p>Microsoft Surface 4</p>
+                    <p>{{ $promotion1->title}}</p>
                     <button>Shop Now</button>
                 </div>
             </div>
-            <div class="promotion2" style="background-image: url('../imgs/promotions/promotion 2.webp')">
+            <div class="promotion2" style="background-image: url('{{ asset($promotion2->image) }}');">
                 <div class="content">
-                    <p>Google Pixel 8 & 8 Pro</p>
+                    <p>{{ $promotion2->title}}</p>
                     <button>Shop Now</button>
                 </div>
             </div>

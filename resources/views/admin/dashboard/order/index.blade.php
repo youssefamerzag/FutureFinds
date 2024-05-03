@@ -15,45 +15,35 @@
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
     <!-- Vite -->
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    @vite(['public/css/app.css','resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 
 <div>
     <div class="header">
-        <p>Products</p>
-        <a style="text-decoration: none;color: white" href="{{ route('dashboard.createProduct')}}"><button>Create Product</button></a>
+        <p>Orders</p>
     </div>
-
-    <div>
-        <div class="products">
-            @foreach ($orders as $order)
-                <div class="product">
-                    <div>
-                        <p>{{ $order['order']->id }}</p>
-                        <p style="color: gray">ID</p>
-                    </div>
-                    <div>
-                        <p>{{ $order['order']->status }}</p>
-                        <p style="color: gray">Status</p>
-                    </div>
-                    <div>
-                        <p>{{ $order['order']->created_at }}</p>
-                        <p style="color: gray">Created By</p>
-                    </div>
-                    <div>
-                        <p>{{ $order['user']->name}}</p>
-                        <p style="color: gray">Customer</p> 
-                    </div>  
-                    <div>
-                        <p>{{ $order['orderTotal']}}</p>
-                        <p style="color: gray">Total</p> 
-                    </div> 
-                </div>
-            @endforeach
-        </div>
-    
-    </div>
-
+</div>
+<div>
+    <table class=" w-full text-center rounded shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]">
+        <tr class=" text-white bg-blue-400">
+            <th class=" py-3 rounded-tl-md">ID</th>
+            <th class=" py-3">Status</th>
+            <th class=" py-3 w-40">Created at</th>
+            <th class=" py-3">Customer</th>
+            <th class=" py-3">Total</th>
+            <th class=" py-3 rounded-tr-md">Actions</th>
+        </tr>
+        @foreach ($orders as $order)
+        <tr class=" transition ease-in hover:shadow-[rgba(17,_17,_26,_0.1)_0px_0px_14px] hover:bg-blue-100">
+            <td class="py-3">{{ $order['order']->id }}</td>
+            <td class="py-3"><span class="bg-slate-400 text-white px-3 py-1 rounded-sm">{{ $order['order']->status }}</span></td>
+            <td class="py-3">{{ $order['order']->created_at }}</td>
+            <td class="py-3">{{ $order['user']->name}}</td>
+            <td class="py-3">{{ $order['orderTotal']}}</td>
+            <td class="py-3">details</td>
+        </tr>        
+        @endforeach
+    </table>
 </div>
 
 @endsection

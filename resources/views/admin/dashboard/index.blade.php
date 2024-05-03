@@ -22,7 +22,7 @@
         <div class="statistic" style="background-color: #4ece3a">
             <div>
                 <p class="statistic_title">PROFITS</p>
-                <p class="statistic_value">600.00</p>
+                <p class="statistic_value">{{ $totalPrice }}MAD</p>
             </div>
             <div>
                 <img width="50" height="50" src="https://img.icons8.com/dotty/80/FFFFFF/money.png" alt="money"/>

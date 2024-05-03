@@ -15,17 +15,17 @@
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
     <!-- Scripts -->
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    @vite(['public/css/app.css','resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 <body>
     <div class="dashboard-container">
-        <aside class="dashboard-sidebar">
+        <aside class="dashboard-sidebar bg-gray-600">
             <nav class="dashboard-nav">
                 <img src="{{ asset('imgs/logo/Logo.png')}}" width="200px" style="margin-bottom: 20px">
-                <a href="{{ route('dashboard.index') }}" class="dashboard-link">Analytics</a>
-                <a href="{{ route('dashboard.products')}}" class="dashboard-link">Products</a>
-                <a href="{{ route('dashboard.orders')}}" class="dashboard-link">Orders</a>
-                <a href="{{ route('dashboard.users')}}" class="dashboard-link">Clients</a>
+                <a class="transition ease-in hover:bg-blue-400 rounded-md py-2.5 px-3 my-1.5 no-underline text-white" href="{{ route('dashboard.index') }}" class="dashboard-link">Analytics</a>
+                <a class="transition ease-in hover:bg-blue-400 rounded-md py-2.5 px-3 my-1.5 no-underline text-white" href="{{ route('dashboard.products')}}" class="dashboard-link">Products</a>
+                <a class="transition ease-in hover:bg-blue-400 rounded-md py-2.5 px-3 my-1.5 no-underline text-white" href="{{ route('dashboard.orders')}}" class="dashboard-link">Orders</a>
+                <a class="transition ease-in hover:bg-blue-400 rounded-md py-2.5 px-3 my-1.5 no-underline text-white" href="{{ route('dashboard.users')}}" class="dashboard-link">Clients</a>
             </nav>
         </aside>
         <main class="dashboard-content">

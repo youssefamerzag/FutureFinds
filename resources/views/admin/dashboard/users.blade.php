@@ -1,68 +1,46 @@
 @extends('layouts.dashboard')
 
 @section('content')
-<style>
-    /* Table Container */
-    .table-container {
-        padding: 20px;
-    }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    @vite(['public/css/app.css','resources/sass/app.scss', 'resources/js/app.js'])
 
-    table {
-    background-color: #f6fff8;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-    }
+    <title>Users</title>
+</head>
+<body>
+    
+</body>
+</html>
 
-    /* Dashboard Table */
-    .dashboard-table {
-        width: 100%;
-        border-collapse: collapse;
-    }
-
-    /* Table Header */
-    .dashboard-table th {
-        padding: 8px;
-        text-align: left;
-        background-color: #2E6CA1;
-        color: white;
-    }
-
-    /* Table Body */
-    .dashboard-table td {
-        padding: 8px;
-        border-bottom: 1px solid #ddd;
-    }
-
-    /* Alternate Row Color */
-    .dashboard-table tbody tr:nth-child(even) {
-        background-color: #f2f2f2;
-    }
-</style>
-
-<p style="font-size: 30px; font-weight: 800">Users</p>
-<div class="table-container">
-    <table class="dashboard-table">
+<p>Users</p>
+<div >
+    <table class=" w-full text-center rounded shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]">
         <thead>
-            <tr>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Joined</th>
-                <th></th>
-                <th></th>
+            <tr class=" text-white bg-blue-400">
+                <th class=" py-3 rounded-tl-md">Name</th>
+                <th class=" py-3">Email</th>
+                <th class=" py-3">Joined</th>
+                <th class=" py-3"></th>
+                <th class=" py-3 rounded-tr-md"></th>
             </tr>
         </thead>
         <tbody>
             @foreach($users as $user) 
                 @if($user->role != 'admin')
-                    <tr>
-                        <td>{{ $user->name }}</td>
-                        <td>{{ $user->email }}</td>
-                        <td>{{ $user->created_at->diffForHumans() }}</td>
-                        <td><button style="background-color: #2E6CA1;padding: 5px 10px; border-radius: 4px; border : none"><a href="{{ route('dashboard.usersDetails' , $user->id ) }}" style="color: white; text-decoration: none">Details</a></button></td>
-                        <td>
-                            <form action="{{ route('dashboard.userDestroy', $user->id)}}" method="POST">
+                    <tr class=" transition ease-in hover:shadow-[rgba(17,_17,_26,_0.1)_0px_0px_14px] hover:bg-blue-100">
+                        <td class="py-3">{{ $user->name }}</td>
+                        <td class="py-3">{{ $user->email }}</td>
+                        <td class="py-3">{{ $user->created_at->diffForHumans() }}</td>
+                        <td class="py-3"><button class="bg-blue-500 py-1 px-2.5 rounded-sm"><a href="{{ route('dashboard.usersDetails' , $user->id ) }}" style="color: white; text-decoration: none">Details</a></button></td>
+                        <td class="py-3">
+                            <form id="deleteForm" action="{{ route('dashboard.userDestroy', $user->id)}}" method="POST">
                                 @csrf
                                 @method('delete')
-                                <input type="submit" value="Delete" style="background-color: red; color: white; padding: 5px 10px; border-radius: 4px; border : none">
+                                <img type='submit' onclick="submitForm()" width="35" height="35" src="https://img.icons8.com/color/48/delete-forever.png" alt="delete-forever"/>
                             </form>
                         </td>
                     </tr>
@@ -71,4 +49,10 @@
         </tbody>
     </table>
 </div>
+
+<script>
+    function submitForm() {
+        document.getElementById("deleteForm").submit();
+    }
+</script>
 @endsection

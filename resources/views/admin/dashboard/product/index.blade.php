@@ -21,13 +21,13 @@
 <div>
     <div class="header">
         <p>Products</p>
-        <a style="text-decoration: none;color: white" href="{{ route('dashboard.createProduct')}}"><button>Create Product</button></a>
+        <a style="text-decoration: none;color: white" href="{{ route('dashboard.createProduct')}}"><button class="bg-gray-500">Create Product</button></a>
     </div>
 
     <div>
         <div class="products">
             @foreach ($products as $product)
-                <div class="product">
+                <div class="product transition ease-in hover:bg-blue-100 hover:shadow-[rgba(17,_17,_26,_0.1)_0px_0px_14px]">
                     <img src="{{ asset('imgs/' . $product->image)}}" alt="{{ $product->title }}">
                     <p class="productTitle">{{ $product->title }}</p>
                     <div>
