@@ -26,6 +26,7 @@
                 <a class="transition ease-in hover:bg-blue-400 rounded-md py-2.5 px-3 my-1.5 no-underline text-white" href="{{ route('dashboard.products')}}" class="dashboard-link">Products</a>
                 <a class="transition ease-in hover:bg-blue-400 rounded-md py-2.5 px-3 my-1.5 no-underline text-white" href="{{ route('dashboard.orders')}}" class="dashboard-link">Orders</a>
                 <a class="transition ease-in hover:bg-blue-400 rounded-md py-2.5 px-3 my-1.5 no-underline text-white" href="{{ route('dashboard.users')}}" class="dashboard-link">Clients</a>
+                <a class="transition ease-in hover:bg-blue-400 rounded-md py-2.5 px-3 my-1.5 no-underline text-white" href="{{ route('dashboard.promotions')}}" class="dashboard-link">Promotions</a>
             </nav>
         </aside>
         <main class="dashboard-content">

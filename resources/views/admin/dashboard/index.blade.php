@@ -67,7 +67,7 @@
     </div>
 
     <p style="margin: 10px ; font-size: 25px; margin-top: 30px">Last Ordered Products</p>
-    <div class="orders">
+    <div class="orders min-w-max max-w-screen-xl w-full bg-blue-100 rounded-md shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px]">
         @foreach ($orders as $order)
             @foreach($order['products'] as $product)
                 <div class="order">

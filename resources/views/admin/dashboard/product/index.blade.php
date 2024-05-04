@@ -24,12 +24,12 @@
         <a style="text-decoration: none;color: white" href="{{ route('dashboard.createProduct')}}"><button class="bg-gray-500">Create Product</button></a>
     </div>
 
-    <div>
-        <div class="products">
+    <div class="w-full flex  justify-center bg-blue-100 rounded-md shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px]">
+        <div class="min-w-max max-w-screen-xl w-full">
             @foreach ($products as $product)
-                <div class="product transition ease-in hover:bg-blue-100 hover:shadow-[rgba(17,_17,_26,_0.1)_0px_0px_14px]">
-                    <img src="{{ asset('imgs/' . $product->image)}}" alt="{{ $product->title }}">
-                    <p class="productTitle">{{ $product->title }}</p>
+                <div class="product rounded-md  transition ease-in hover:bg-gray-100 hover:shadow-[rgba(17,_17,_26,_0.1)_0px_0px_14px]">
+                    <img style="width: 80px ; height: 80px" src="{{ asset('imgs/' . $product->image)}}" alt="{{ $product->title }}">
+                    <p class="productTitle text-left ml-2 w-1/4">{{ $product->title }}</p>
                     <div>
                         <p>{{ $product->price }}</p>
                         <p style="color: gray">Price</p>
@@ -46,8 +46,10 @@
                         <p>{{ $product->user->name}}</p>
                         <p style="color: gray">Created By</p>
                     </div>
-                    <p class="detailsLink">Details</p>
-                    <a class="detailsLink" href="{{ route('dashboard.productsEdit', $product->id)}}" >Edit</a>
+                    <button class="bg-blue-500 py-1 px-2.5 rounded-sm mx-2"><a style="color: white; text-decoration: none">Details</a></button>
+                    <a class="detailsLink mx-4" href="{{ route('dashboard.productsEdit', $product->id)}}" >
+                        <img width="30" height="30" src="https://img.icons8.com/fluency/48/create-new.png" alt="create-new"/>
+                    </a>
                 </div>
             @endforeach
         </div>

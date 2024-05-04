@@ -8,6 +8,7 @@ use App\Http\Controllers\CountryController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\PromotionController;
 use App\Http\Controllers\StatisticsController;
 use App\Http\Controllers\UserController;
 use App\Http\Middleware\checkAge;
@@ -15,6 +16,7 @@ use App\Http\Middleware\CheckProfile;
 use App\Models\CardItem;
 use App\Models\Categories;
 use App\Models\Product;
+use App\Models\Promotion;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Psy\VersionUpdater\Checker;
@@ -71,6 +73,11 @@ Route::prefix('/dashboard')->group(function () {
 
             //orders
             Route::get('/orders' , [OrderController::class , 'index'])->name('dashboard.orders');
+
+            //promotion 
+            Route::get('/promotions' , [PromotionController::class , 'index'])->name('dashboard.promotions');
+            Route::get('/promotios/{promotion}/edit' , [PromotionController::class , 'edit'])->name('dashboard.Editpromotions');
+            Route::put('/promotios/{promotion}/edit' , [PromotionController::class , 'update'])->name('dashboard.Updatepromotions');
         });
     });
 });
